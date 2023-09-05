@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def print_last_digit(number):
 
-    number = result;
+    number = result
     if number < 0:
         number = (number * -1)
     result = number % 10
