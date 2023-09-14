@@ -3,4 +3,5 @@
 
 
 class Square:
+    """this is a disposable placeholder"""
     pass
