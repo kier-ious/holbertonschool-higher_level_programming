@@ -6,13 +6,16 @@ class Square:
     """Square class with size attribute"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """init method w/ optional size"""
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        if not isinstance(position, tuple) or len(position) != 2 \
+            or not all(isinstance(i, int) and i >= 0 for i in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
+
         self.__size = size
         self.__position = position
-
-    def area(self):
-        """Calculate are of the Square"""
-        return self.__size ** 2
 
     @property
     def size(self):
@@ -37,16 +40,15 @@ class Square:
     @position.setter
     def position(self, value):
         """Setter for size in method"""
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
+        if not isinstance(value, tuple) or len(value) != 2 \
+            or not all(isinstance(i, int) and i >= 0 for i in value):
+            raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
 
     def area(self):
         """Calculate are of the Square"""
-        return self.__position ** 2
+        return self.__size ** 2
 
     def my_print(self):
         """Printing coordinates of the Square with #"""
