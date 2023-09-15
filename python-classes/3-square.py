@@ -11,7 +11,6 @@ class Square:
 
     def area(self):
         """Calculate are of the Square"""
-        #Access size attribute using self.__size
         return self.__size ** 2
 
         if not isinstance(size, int):
