@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""empty class Square"""
+"""This class is defining a Square"""
 
 
 class Square:
     """Square class with size attribute"""
-
     def __init__(self, size=0):
         """init method w/ optional size"""
         if not isinstance(size, int):
