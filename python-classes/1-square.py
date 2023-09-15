@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""empty class Square"""
 
 
 class Square:
@@ -6,4 +7,4 @@ class Square:
 
     def __init__(self, size):
         """init Private attribute"""
-        self.size = size
+        self.__size = size
