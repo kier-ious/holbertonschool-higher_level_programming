@@ -3,4 +3,5 @@
 
 
 class Rectangle:
+    """this is a disposable placeholder"""
     pass
