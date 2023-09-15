@@ -7,6 +7,7 @@ class Square:
 
     def __init__(self, size=0):
         """init method w/ optional size"""
+
         if not isinstance(size, int):
             raise TypeError("Size must be an integer")
         elif size < 0:
