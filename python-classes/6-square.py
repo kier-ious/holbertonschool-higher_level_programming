@@ -29,15 +29,6 @@ class Square:
         else:
             self.__size = value
 
-    def my_print(self):
-        """Printing the Square with #"""
-        if self.__size == 0:
-            print()
-        else:
-            for _ in range(self.__size):
-                print("#" * self.__size)
-
-
     @property
     def position(self):
         """Getter for size attribute"""
@@ -57,11 +48,12 @@ class Square:
         """Calculate are of the Square"""
         return self.__position ** 2
 
-
     def my_print(self):
-        """Printing the Square with #"""
-        if self.__position == 0:
+        """Printing coordinates of the Square with #"""
+        if self.__size == 0:
             print()
         else:
-            for _ in range(self.__position):
-                print("#" * self.__position)
+            for _ in range(self.__position[1]):
+                print()
+            for _ in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
