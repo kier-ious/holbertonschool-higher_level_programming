@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """Rectangle class with width and height atrributes"""
 
@@ -61,4 +60,5 @@ class Rectangle:
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
+        """Deleting instance"""
         print("Bye rectangle...")
