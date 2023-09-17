@@ -3,6 +3,7 @@
 
 
 class Rectangle:
+    """Rectangle class with width and height atrributes"""
 
     def __init__(self, width=0, height=0):
         self.__width = width
@@ -47,9 +48,9 @@ class Rectangle:
     def __str__(self):
         """Printing the Rectangle with #"""
         if self.width == 0 or self.height == 0:
-            return " "
+            return ""
         else:
-            rectangle_str = " "
+            rectangle_str = ""
         for _ in range(self.height):
             rectangle_str += "#" * self.width + "\n"
         return rectangle_str[:-1]
