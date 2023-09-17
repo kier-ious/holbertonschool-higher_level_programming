@@ -45,24 +45,22 @@ class Rectangle:
 
     def area(self):
         """Calculate are of the Rectangle"""
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimeter(self):
-        if self.width == 0 or self.height == 0:
-            return 0
-        return 2 * (self.width + self.height)
+        return 2 * (self.__width + self.__height)
 
     def __str__(self):
         """Printing the Rectangle with #"""
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
-        return (str(Rectangle.print_symbol) * self.width + "\n") * self.height
+        return "\n".join([str(self.print_symbol) * self.__width] * self.__height)
 
     def __repr__(self):
         """Return str repr for recreating rectangle"""
-        return f"Rectangle({self.width}, {self.height})"
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         """Deleting instance"""
-        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
