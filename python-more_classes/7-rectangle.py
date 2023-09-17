@@ -56,7 +56,7 @@ class Rectangle:
         """Printing the Rectangle with #"""
         if self.width == 0 or self.height == 0:
             return ""
-        return (str(self.print_symbol) * self.width + "\n") * self.height
+        return (str(self.print_symbol) * (self.width) + "\n") * self.height
 
     def __repr__(self):
         """Return str repr for recreating rectangle"""
