@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""An empty class rectangle that defines it"""
+"""Rectangle class with width and height atrributes"""
 
 
 class Rectangle:
-    """Rectangle class with size attribute"""
 
     def __init__(self, width=0, height=0):
         self.__width = width
@@ -43,14 +42,14 @@ class Rectangle:
         return self.width * self.height
 
     def perimeter(self):
-        return (self.width + self.height) * 2
+        return 2 * (self.width + self.height)
 
     def __str__(self):
         """Printing the Rectangle with #"""
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return " "
         else:
             rectangle_str = " "
-            for _ in range(self.height):
-                rectangle_str += "#" * self.width + "\n"
-            return rectangle_str[:-1]
+        for _ in range(self.height):
+            rectangle_str += "#" * self.width + "\n"
+        return rectangle_str[:-1]
