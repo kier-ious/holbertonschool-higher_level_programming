@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Adding two intgers together"""
 
 def add_integer(a, b=98):
     """Checking to see if a is an integer or a float"""
