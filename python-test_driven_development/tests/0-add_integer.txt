@@ -22,10 +22,10 @@ Traceback (most recent call last):
 TypeError: b must be an integer
 
 Passing None:
->>> add_integer
+>>> add_integer(None)
 Traceback (most recent call last):
 ...
-TypeError: a must be an integer
+TypeError: a must and b be an integer
 
 Integer is too large:
 >>> add_integer(1000000000, 200000000)
