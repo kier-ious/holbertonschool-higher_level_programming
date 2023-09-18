@@ -19,13 +19,13 @@ Adding an int to a string:
 >>> add_integer(4, "School")
 Traceback (most recent call last):
 ...
-TypeError: b must be an integer.
+TypeError: b must be an integer
 
 Passing None:
 >>> add_integer
 Traceback (most recent call last):
 ...
-TypeError: a must be an integer.
+TypeError: a must be an integer
 
 Integer is too large:
 >>> add_integer(1000000000, 200000000)
