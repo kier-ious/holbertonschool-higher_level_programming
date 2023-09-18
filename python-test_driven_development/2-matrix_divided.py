@@ -3,8 +3,7 @@
 
 
 def matrix_divided(matrix, div):
-    the_divided_matrix = []
-
+    """Dives elements of the matrix by div"""
     for row in matrix:
         if not isinstance(row, list) or not all(isinstance(element, (int, float)) for element in row):
             return False
