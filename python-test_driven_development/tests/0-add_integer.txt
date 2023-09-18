@@ -15,7 +15,7 @@ Import module:
 >>> add_integer(100.3, -2)
 98
 
-"""adding an int to a string"""
+Adding an int to a string:
 >>> add_integer(4, "School")
 Traceback (most recent call last):
 ...
@@ -26,3 +26,10 @@ Passing None:
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer.
+
+Integer is too large:
+>>> add_integer(1000000000, 200000000)
+Traceback (most recent call last):
+    ...
+OverflowError: too large
+    """
