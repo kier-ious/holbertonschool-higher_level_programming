@@ -16,7 +16,7 @@ Import module:
 98
 
 """adding an int to a string"""
->>> add_integer(4, "school")
+>>> add_integer(4, "School")
 Traceback (most recent call last):
 ...
 TypeError: b must be an integer.
