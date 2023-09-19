@@ -1,0 +1,22 @@
+Say my name, say my name:
+
+Import module:
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Testing names:
+    >>> say_my_name("John". "Smith")
+    >>> My name is John Smith
+
+Testing names:
+    >>> say_my_name("Walter", "White")
+    >>> My name is Walter White
+
+
+Testing just a first name:
+    >>> say_my_name("Bob")
+    My name is Bob
+
+Testing integer and string:
+    Traceback: (most recent call last):
+        ...
+    TypeError: first_name must be a string
