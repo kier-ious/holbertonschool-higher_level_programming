@@ -5,11 +5,11 @@ Import module:
 
 Testing names:
     >>> say_my_name("John", "Smith")
-    >>> My name is John Smith
+    My name is John Smith
 
 Testing names:
     >>> say_my_name("Walter", "White")
-    >>> My name is Walter White
+    My name is Walter White
 
 
 Testing just a first name:
