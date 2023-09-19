@@ -13,7 +13,7 @@ Testing names:
 
 
 Testing just a first name:
-    >>> say_my_name("Bob")
+    >>> say_my_name("Bod")
         My name is Bob
 
 Testing integer and string:
