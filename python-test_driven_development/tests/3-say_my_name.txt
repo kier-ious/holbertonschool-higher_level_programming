@@ -5,16 +5,19 @@ Import module:
 
 Testing names:
     >>> say_my_name("John", "Smith")
-            My name is John Smith
+        ...
+    My name is John Smith
 
 Testing names:
     >>> say_my_name("Walter", "White")
-            My name is Walter White
+        ...
+    My name is Walter White
 
 
 Testing just a first name:
     >>> say_my_name("Bob")
-            My name is Bob
+        ...
+    My name is Bob
 
 Testing integer and string:
     Traceback: (most recent call last):
