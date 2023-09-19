@@ -1,0 +1,14 @@
+Text Indentation:
+
+
+Import module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Printing all the little special characters:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE
+    :
+    <BLANKLINE
