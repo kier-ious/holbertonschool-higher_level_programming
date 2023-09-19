@@ -5,6 +5,10 @@ Import module:
 
 Printing a square with 4:
     >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
 
 The square has a value of 0 on each side:
     >>> print_square(0)
