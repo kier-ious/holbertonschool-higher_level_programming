@@ -3,7 +3,7 @@
 
 
 def matrix_divided(matrix, div):
-    """Dives elements of the matrix by div"""
+    """Divides elements of the matrix by div"""
 
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
@@ -20,9 +20,10 @@ def matrix_divided(matrix, div):
                         of integers/floats")
 
     row_size = len(matrix[0])
-    if not all(len(row)) == row_size for row in matrix:
+    if not all(len(row) == row_size for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
 
-    new_matrix = [[round(element / div, 3) for element in row] for row in matrix]
+    new_matrix = [[round(element / div, 3)
+        for element in row] for row in matrix]
 
     return new_matrix
