@@ -1,0 +1,17 @@
+Printing a square with #'s:
+
+Import module:
+    >>> print_square = __import__('4-print_square').print_square
+
+Printing a square with 4:
+    >>> print_square(4)
+
+The square has a value of 0 on each side:
+    >>> print_square(0)
+
+
+Trying to float in a square:
+    >>> print_square(2.0)
+    Traceback: (most recent call last):
+        ...
+    TypeError: size must be an integer
