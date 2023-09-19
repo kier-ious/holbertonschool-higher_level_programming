@@ -23,7 +23,9 @@ def matrix_divided(matrix, div):
     if not all(len(row) == row_size for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
 
-    new_matrix = [[round(element / div, 3)
-        for element in row] for row in matrix]
+    for row in matrix:
+        for element in row:
+            new_matrix = round(element / div, 3)
+
 
     return new_matrix
