@@ -19,5 +19,5 @@ Passing a special character as text:
     Holberton.School
 
 Passing a special character as text and a space:
-    >>> text_indentation("Holberton. School? How are you:    John")
-    Holberton. School? How are you:    John
+    >>> text_indentation("Holberton. School? How are you:     John")
+    Holberton. School? How are you:     John
