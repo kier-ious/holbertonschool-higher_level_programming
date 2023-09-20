@@ -14,10 +14,10 @@ Passing text as a string:
     >>> text_indentation("Holberton School")
     Holberton School
 
-Passing a special character as text + a space:
+Passing a special character as text:
     >>> text_indentation("Holberton.School")
     Holberton.School
 
-Passing a special character as text:
-    >>> text_indentation("Hello? World")
-    Hello? World
+Passing a special character as text and a space:
+    >>> text_indentation("Holberton. School? How are you:    John")
+    Holberton. School? How are you:    John
