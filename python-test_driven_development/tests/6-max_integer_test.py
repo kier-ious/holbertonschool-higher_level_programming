@@ -6,17 +6,14 @@ max_integer = __import__('6-max_integer').max_integer
 
 class TestStringMethods(unittest.TestCase):
 
-    def test(self):
-        self.assertTrue(max_integer)
-
     def test_positive_max(self):
-        self.assertEqual(max_integer([4, 30, 14]), 60)
+        self.assertEqual(max_integer([4, 30, 14]), 30)
 
     def test_negative_max(self):
-        self.assertEqual(max_integer([-4, -30, -14]), -60)
+        self.assertEqual(max_integer([-4, -30, -14]), -4)
 
     def test_middle_max(self):
-        self.assertEqual(max_integer([4, 30, 14]), 60)
+        self.assertEqual(max_integer([4, 30, 14]), 30)
 
     def test_end_max(self):
         test_max = max_integer([14, 30, 4])
