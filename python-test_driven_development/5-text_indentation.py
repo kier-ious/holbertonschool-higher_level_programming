@@ -21,7 +21,6 @@ def text_indentation(text):
     """Print the new lines with extra newlines"""
     for i, line in enumerate(result):
         """Adding newlines with sentences that have these special characters"""
-        if i > 0 and (line.ends(".") | ("?") | (":")):
+        if i > 0 and (line.endswith(".", "?", ":")):
             print()
-
         print(line)

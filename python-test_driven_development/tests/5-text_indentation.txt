@@ -35,15 +35,7 @@ Import module:
 
 Printing all the little special characters:
     >>> text_indentation(".?:")
-    <BLANKLINE>
-    .
-    <BLANKLINE>
-    <BLANKLINE>
-    ?
-    <BLANKLINE>
-    <BLANKLINE>
-    :
-    <BLANKLINE>
+    "\n.\n\n\n?\n\n\n:"
 
 
 Is a node a text:
@@ -61,18 +53,12 @@ Imposter number:
 
 Passing text as text:
     >>> text_indentation("Holberton School")
-    Holberton School
+    'Holberton School'
 
 Passing a special character as text:
     >>> text_indentation("Holberton.School")
-    Holberton.School
+    'Holberton.School'
 
 Passing a special character as text:
     >>> text_indentation("Holberton.School? How are you: John")
-    Holberton.
-    <BLANKLINE>
-    School
-    <BLANKLINE>
-    How are you:
-    <BLANKLINE>
-    John
+    'Holberton.\nSchool\nHow are you:\n\nJohn'
