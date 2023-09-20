@@ -4,10 +4,11 @@ Text Indentation:
 Import module:
     >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-
 Imposter number:
     >>> text_indentation(14)
-    text must be a string
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
 
 Passing text as a string:
     >>> text_indentation("Holberton School")
@@ -18,6 +19,5 @@ Passing a special character as text + a space:
     Holberton.School
 
 Passing a special character as text:
-    >>> text_indentation("Where? Are you")
-    Where?
-    Are you
+    >>> text_indentation("Hello? World")
+    Hello? World
