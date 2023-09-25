@@ -1,0 +1,39 @@
+Integer Validator
+
+
+    Importing the class module:
+        >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+    Print the area:
+        >>> BG = BaseGeometry()
+        >>> BG.area()
+        Traceback (most recent call last):
+        ...
+        Exception: area() is not implemented
+
+    Attempting non-int:
+        >>> BaseGeometry.integer_validator("self", "name", "6")
+        Traceback (most recent call last):
+        ...
+        TypeError: name must be an integer
+
+    Negative value:
+        >>> BaseGeometry.integer_validator("self", "name", -6)
+        Traceback (most recent call last):
+        ...
+        ValueError: name must be greater than 0
+
+    Positive value:
+        >>> BaseGeometry.integer_validator("self", "name", 6)
+
+    Attempting None value:
+        >>> BaseGeometry.integer_validator("self", "age", None)
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+
+    Attemping a list:
+        >>> BaseGeometry.integer_validator("self", "age", [3])
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
