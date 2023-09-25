@@ -3,20 +3,29 @@ Class that inherits from a list:
 
 Import module:
     >>> MyList = __import__('1-my_list').MyList
-    >>> my_list = Mylist()
 
-Testing cases:
+
+    >>> my_list = MyList()
     >>> my_list.append(1)
     >>> my_list.append(4)
     >>> my_list.append(2)
     >>> my_list.append(3)
     >>> my_list.append(5)
-    >>> my_list.print_sorted()
-    [1, 2, 3, 4, 5]
-
-    Normal behavior:
     >>> print(my_list)
     [1, 4, 2, 3, 5]
+
+    List is negative:
+    >>> my_list = MyList([-1, -2, -3, -4, -5])
+    >>> my_list
+    [-1, -2, -3, -4, -5]
+
+    List is a string:
+    >>> my_list = MyList(["1", "2", "3", "4", "5"])
+    >>> ['1', '2', '3', '4', '5']
+
+    Print the sprted list:
+    MyList.print_sorted(my_list) == [1, 2, 3, 4, 5]
+    True
 
     Lists aren't the same:
     >>> MyList.print_sorted() == my_list
@@ -24,10 +33,10 @@ Testing cases:
 
     Lists are not equal:
     >>> MyList.print_sorted() is my_list
-    False
+    Traceback (most recent call last):
+    ...
+    TypeError: print_sorted()
 
-    List is negative:
-    >>> MyList = [-1, -2, -3, -4, -5]
 
     List is a string:
     >>> MyList = ["1, 2, 3, 4, 5"]
