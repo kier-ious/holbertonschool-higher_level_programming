@@ -37,3 +37,21 @@ Integer Validator
         Traceback (most recent call last):
         ...
         TypeError: age must be an integer
+
+    No arguments:
+        >>> BaseGeometry.integer_validator()
+        Traceback (most recent call last):
+        ...
+        TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
+
+    Too many arguments:
+        >>> BaseGeometry.integer_validator(1, 2, 666, 100)
+        Traceback (most recent call last):
+        ...
+        TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+    Is a string:
+        >>> BaseGeometry.integer_validator("this is a string")
+        Traceback (most recent call last):
+        ...
+        TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
