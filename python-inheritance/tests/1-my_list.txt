@@ -36,7 +36,3 @@ Import module:
     Traceback (most recent call last):
     ...
     TypeError: print_sorted()
-
-
-    List is a string:
-    >>> MyList = ["1, 2, 3, 4, 5"]
