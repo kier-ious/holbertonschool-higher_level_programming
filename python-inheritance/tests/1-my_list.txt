@@ -4,23 +4,13 @@ Class that inherits from a list:
 Import module:
     >>> MyList = __import__('1-my_list').MyList
 
-
-    >>> my_list = MyList()
-    >>> my_list.append(1)
-    >>> my_list.append(4)
-    >>> my_list.append(2)
-    >>> my_list.append(3)
-    >>> my_list.append(5)
-    >>> print(my_list)
-    [1, 4, 2, 3, 5]
-
     List is negative:
     >>> MyList.print_sorted([-1, -2, -3, -4, -5])
-    [-1, -2, -3, -4, -5]
+    [-5, -4, -3, -2, -1]
 
     List is a string:
     >>> MyList.print_sorted(["1", "2", "3", "4", "5"])
-    >>> ['1', '2', '3', '4', '5']
+    ['1', '2', '3', '4', '5']
 
     List is None:
     >>> MyList.print_sorted(None)
@@ -34,10 +24,10 @@ Import module:
 
     Lists aren't the same:
     >>> MyList.print_sorted() == my_list
-    False
-
-    Lists are not equal:
-    >>> MyList.print_sorted() is my_list
     Traceback (most recent call last):
     ...
-    TypeError:
+    TypeError: print_sorted() missing 1 required positional argument: 'self'
+
+    List is empty:
+    >>> MyList.print_sorted([])
+    []
