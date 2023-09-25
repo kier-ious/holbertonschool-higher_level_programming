@@ -15,15 +15,20 @@ Import module:
     [1, 4, 2, 3, 5]
 
     List is negative:
-    >>> my_list = MyList([-1, -2, -3, -4, -5])
-    >>> my_list
+    >>> MyList.print_sorted([-1, -2, -3, -4, -5])
     [-1, -2, -3, -4, -5]
 
     List is a string:
-    >>> my_list = MyList(["1", "2", "3", "4", "5"])
+    >>> MyList.print_sorted(["1", "2", "3", "4", "5"])
     >>> ['1', '2', '3', '4', '5']
 
-    Print the sprted list:
+    List is None:
+    >>> MyList.print_sorted(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: 'NoneType' object is not iterable
+
+    Print the sorted list:
     MyList.print_sorted(my_list) == [1, 2, 3, 4, 5]
     True
 
@@ -35,4 +40,4 @@ Import module:
     >>> MyList.print_sorted() is my_list
     Traceback (most recent call last):
     ...
-    TypeError: print_sorted()
+    TypeError:
