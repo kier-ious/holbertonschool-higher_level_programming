@@ -4,7 +4,6 @@
 
 class BaseGeometry:
     """The empty class"""
-
     def area(self):
         """Raise an exception error"""
-        raise Exception("area() is not impl")
+        raise Exception("area() is not implemented")
