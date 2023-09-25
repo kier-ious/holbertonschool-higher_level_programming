@@ -3,7 +3,7 @@ Class that inherits from a list:
 
 Import module:
     >>> MyList = __import__('1-my_list').MyList
-    >>> my_list = My_list()
+    >>> my_list = Mylist()
 
 Testing cases:
     >>> my_list.append(1)
@@ -14,11 +14,20 @@ Testing cases:
     >>> my_list.print_sorted()
     [1, 2, 3, 4, 5]
 
+    Normal behavior:
     >>> print(my_list)
     [1, 4, 2, 3, 5]
 
-    >>> my_list.print_sorted() == my_list
+    Lists aren't the same:
+    >>> MyList.print_sorted() == my_list
     False
 
-    >>> my_list.print_sorted() is my_list
+    Lists are not equal:
+    >>> MyList.print_sorted() is my_list
     False
+
+    List is negative:
+    >>> MyList = [-1, -2, -3, -4, -5]
+
+    List is a string:
+    >>> MyList = ["1, 2, 3, 4, 5"]
