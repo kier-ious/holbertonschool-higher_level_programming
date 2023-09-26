@@ -70,6 +70,6 @@ Integer Validator
 
     Floats:
         >>> BaseGeometry.integer_validator("age", "value", 3.5)
-        Traceback (moost recent call last):
+        Traceback (most recent call last):
         ...
         TypeError: value must be an integer
