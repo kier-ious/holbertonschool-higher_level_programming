@@ -73,3 +73,6 @@ Integer Validator
         Traceback (most recent call last):
         ...
         TypeError: value must be an integer
+
+    Valid int:
+        >>> BaseGeometry.integer_validator("age", "value", 6)
