@@ -1,22 +1,21 @@
 #!/usr/bin/python3
 """subclass of BaseGeometry, Square"""
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+Rectangle = __import__('9-base_geometry').Rectangle
 
 
-class Square(BaseGeometry):
+class Square(Rectangle):
     """Creating a Square class
 
     Args:
         BaseGeometry (base class): Parent class
     """
     def __init__(self, size):
-        BaseGeometry.integer_validator(self, 'size', size)
+        """Intitializing new Square class
+
+        Args:
+            size (Int): Size of Square class
+        """
+        self.integer_validator("self", size)
+
+        super().__init__(size, size)
         self.__size = size
-        size >= 0
-
-    def area(self):
-        return self.__size
-
-    def __str__(self):
-
-        print("[Square] {}".format(self.__size))
