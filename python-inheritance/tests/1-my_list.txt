@@ -4,30 +4,30 @@ Class that inherits from a list:
 Import module:
     >>> MyList = __import__('1-my_list').MyList
 
-    List is negative:
+List is negative:
     >>> MyList.print_sorted([-1, -2, -3, -4, -5])
     [-5, -4, -3, -2, -1]
 
-    List is a string:
+List is a string:
     >>> MyList.print_sorted(["1", "2", "3", "4", "5"])
     ['1', '2', '3', '4', '5']
 
-    List is None:
+List is None:
     >>> MyList.print_sorted(None)
     Traceback (most recent call last):
     ...
     TypeError: 'NoneType' object is not iterable
 
-    Print the sorted list:
+Print the sorted list:
     MyList.print_sorted(my_list) == [1, 2, 3, 4, 5]
     True
 
-    Lists aren't the same:
+Lists aren't the same:
     >>> MyList.print_sorted() == my_list
     Traceback (most recent call last):
     ...
     TypeError: print_sorted() missing 1 required positional argument: 'self'
 
-    List is empty:
+List is empty:
     >>> MyList.print_sorted([])
     []
