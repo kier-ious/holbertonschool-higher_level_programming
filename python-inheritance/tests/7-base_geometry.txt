@@ -45,25 +45,31 @@ Integer Validator
         TypeError: integer_validator() missing 3 required positional arguments: 'self', 'name', and 'value'
 
     Too many arguments:
-        >>> BaseGeometry.integer_validator(1, 2, 666, 100)
+        >>> BaseGeometry.integer_validator("age", "value", 666, 100)
         Traceback (most recent call last):
         ...
         TypeError: integer_validator() takes 3 positional arguments but 4 were given
 
     Is a string:
-        >>> BaseGeometry.integer_validator("this is a string")
+        >>> BaseGeometry.integer_validator("age", "age", "string")
         Traceback (most recent call last):
         ...
-        TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+        TypeError: age must be an integer
 
     Bool:
-        >>> BaseGeometry.integer_validator("name", True)
+        >>> BaseGeometry.integer_validator("name", "value", True)
         Traceback (most recent call last):
         ...
-        TypeError: integer_validator() missing 1 required positional argument: 'value'
+        TypeError: value must be an integer
 
     Tuple:
-        >>> BaseGeometry.integer_validator("age", (1, 2, 3, 4))
+        >>> BaseGeometry.integer_validator("age", "value", (1, 2, 3, 4))
         Traceback (most recent call last):
         ...
-        TypeError: integer_validator() missing 1 required positional argument: 'value'
+        TypeError: value must be an integer
+
+    Floats:
+        >>> BaseGeometry.integer_validator("age", "value", 3.5)
+        Traceback (moost recent call last):
+        ...
+        TypeError: value must be an integer
