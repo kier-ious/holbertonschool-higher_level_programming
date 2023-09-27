@@ -9,7 +9,7 @@ class Student:
         """Initializing methods attributes"""
         self.first_name = first_name
         self.last_name = last_name
-        self.age =age
+        self.age = age
 
     def to_json(self):
         """Method that returs dict info"""
