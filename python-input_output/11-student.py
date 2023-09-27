@@ -20,6 +20,16 @@ class Student:
                 if type(item) != str:
                     return obj
 
+            d_list = {}
+
+            for iatr in range(len(attrs)):
+                for satr in obj:
+                    if attrs[iatr] == satr:
+                        d_list[satr] = obj[satr]
+            return d_list
+
+        return obj
+
     def reload_from_json(self, json):
         """Replaces all attrs of Student instance"""
         for attr in json:
