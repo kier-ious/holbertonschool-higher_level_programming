@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Save dat object to a file!"""
+"""POOF, obj from JSON file"""
 import json
 
 
-def save_to_json_file(my_obj, filename):
-    """Func from obj to txt in JSON"""
-    with open(filename, 'w', encoding="utf-8") as f:
-        json.dump(my_obj, f)
+def load_from_json_file(filename):
+    """Func from obj from JSON"""
+    with open(filename, 'r', encoding="utf-8") as f:
+        return json.load(f)
