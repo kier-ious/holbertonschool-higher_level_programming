@@ -3,6 +3,6 @@
 
 
 def write_file(filename="", text=""):
-    """Reads txt file, prints to stdout"""
+    """write str to txt file, returns #"""
     with open(filename, 'w', encoding="utf-8") as f:
         return f.write(text)
