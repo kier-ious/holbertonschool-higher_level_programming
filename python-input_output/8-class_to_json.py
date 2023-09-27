@@ -10,5 +10,5 @@ def class_to_json(obj):
     if hasattr(obj, "__dict__"):
         """Check if the object has a dict attribute"""
         result = obj.__dict__.copy()
-
+        
     return result
