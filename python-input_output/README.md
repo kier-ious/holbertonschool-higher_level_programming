@@ -19,6 +19,8 @@
     * What is and how to use the with statement
 
     * What is JSON
+    loads() takes in a string and returns a json object. json. dumps() takes in
+    a json object and returns a string.
 
     * What is serialization
 
