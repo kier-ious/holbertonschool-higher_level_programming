@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Adding and saving items to a JSON file"""
 import sys
-import json
 
 
 INPUT_JSON_FILE = "add_item.json"
