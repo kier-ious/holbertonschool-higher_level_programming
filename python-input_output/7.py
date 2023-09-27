@@ -1,16 +1,31 @@
 #!/usr/bin/python3
-"""Adding all args to Py list and saving to a file"""
+"""Adding and saving items to a JSON file"""
 import sys
 
 
-if __name__ == "__main__":
-    save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
-    load_from_json_file = \
-        __import__("6-load_from_json_file").load_from_json_file
+INPUT_JSON_FILE = "add_item.json"
+OUTPUT_JSON_FILENAME = "add_list.json"
 
+def save_to_json_file(my_obj, filename):
+    """Save Python object to a JSON file"""
+    with open(filename, 'w', encoding="utf-8") as f:
+        json.dump(my_obj, f)
+
+def load_from_json_file(filename):
+    """Load Python object from a JSON file"""
     try:
-        items = load_from_json_file("add_item.json")
+        with open(filename, 'r', encoding="utf-8") as f:
+            return json.load(f)
     except FileNotFoundError
-        items = []
-    items.extend(sys.argv[1:])
-    save_to_json_file(items, "add_items.json")
+        return []
+
+my_list = load_from_json_file(INPUT_JSON_FILE)
+"""Initializes an empty list or load exisitng list from JSON"""
+
+if len(sys.argv) > 1:
+    """Check if there's command line arguments and extend list"""
+    my_list.extend(sys.argv[1:])
+    """Extending list w/ comd line args"""
+
+save_to_json_file(my_list, OUTPUT_JSON_FILENAME)
+"""Save updated list to add_list.json"""
