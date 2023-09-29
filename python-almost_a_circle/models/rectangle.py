@@ -9,10 +9,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize new class"""
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
 # Width -----------------------------------------------------------------------
     @property
@@ -86,7 +86,7 @@ class Rectangle(Base):
         for y in range(self.__y):
             print()
         for i in range(self.__height):
-            for x in range(self.__x)
+            for x in range(self.__x):
                 print(" ", end="")
             for w in range(self.__width):
                 print("#", end="")
@@ -94,9 +94,15 @@ class Rectangle(Base):
 # __str__ ---------------------------------------------------------------------
     def __str__(self):
         """Printing the Rectangle with #"""
-        return [Rectangle] ({}) {}/{} - {}/{}.format(
+        return "[Rectangle] ({}) {}/{} - {}/{}".format( \
             self.__id, self.__y, self.__width, self.__height)
 
 # Update ----------------------------------------------------------------------
     def update(self, *args, **kwargs):
-        arg_list = ["id", "eidth", "height", ]
+        ar_list = ["id", "width", "height", "x", "y"]
+        if args:
+            for i in range(len(args)):
+                setattr(self, ar_list[i], args[i])
+        if kwargs:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
