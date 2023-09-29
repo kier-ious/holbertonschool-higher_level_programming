@@ -15,6 +15,10 @@ class Rectangle(Base):
         self.y = y
 
     @property
+    def id(self):
+        return self.__id
+    
+    @property
     def width(self):
         """Getter for width attribute"""
         return self.__width

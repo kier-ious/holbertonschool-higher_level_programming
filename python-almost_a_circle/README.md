@@ -1,8 +1,17 @@
 # Python - Almost a Circle
 
+*   Starting off the project reminded me a lot of our past project More Classes
+    with setting up the the Base case and then creating the subclass Rectangle
+    using the super() funcion.
 
-    Write the first class Base
-    Write the class Rectangle that inherits from Base
+*   A validator is a descriptor for managed attribute access. Prior to storing
+    any data, it verifies that the new value    meets various type and range
+    restrictions. If those restrictions aren’t met, it raises an exception to
+    prevent data corruption at its source.
+    This Validator class is both an abstract base class and a managed attribute
+    descriptor.
+
+
     Update the class Rectangle by adding validation of all setter methods and instantiation (id excluded)
     Update the class Rectangle by adding the public method def area(self): that returns the area value of the Rectangle instance
     Update the class Rectangle by adding the public method def display(self): that prints in stdout the Rectangle instance with the character # - you don’t need to handle x and y here
