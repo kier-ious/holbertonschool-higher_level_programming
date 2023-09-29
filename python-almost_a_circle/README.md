@@ -11,6 +11,9 @@
     This Validator class is both an abstract base class and a managed attribute
     descriptor.
 
+*   I discovered that you can use the decorator @dataclass and it mitigates the
+    need for using the __init__ method and calling the getters and setters for
+    every attribute.
 
     Update the class Rectangle by adding validation of all setter methods and instantiation (id excluded)
     Update the class Rectangle by adding the public method def area(self): that returns the area value of the Rectangle instance
