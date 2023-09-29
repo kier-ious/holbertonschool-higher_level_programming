@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """Rectangle class"""
-import json
 from models.base import Base
-
 
 
 class Rectangle(Base):
@@ -10,11 +8,11 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize new class"""
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -45,23 +43,46 @@ class Rectangle(Base):
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    @property
+    def x(self):
+        """Getter for x attribute"""
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """Setter for x in method"""
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
+
+    @property
+    def y(self):
+        """Getter for y attribute"""
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """Setter for y in method"""
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
+
     def area(self):
         """Calculate are of the Rectangle"""
-        return self.width * self.height
+        return self.__width * self.__height
 
-    def perimeter(self):
-        return 2 * (self.width + self.height)
+    def display(self):
+        """Print Rectangle using the '#' character"""
+        for _ in range(self.__y):
+            print()
+        for _ in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
         """Printing the Rectangle with #"""
-        if self.width == 0 or self.height == 0:
-            return ""
-        else:
-            rectangle_str = ""
-        for _ in range(self.height):
-            rectangle_str += "#" * self.width + "\n"
-        return rectangle_str.rstrip()
-
-    def __repr__(self):
-        """Return str repr for recreating rectangle"""
-        return f"Rectangle({self.width}, {self.height})"
+        return f"[Rectangle] ({self.id} {self.__x}/{self.__y} - \
+        {self.__width}/{self.__height})"
