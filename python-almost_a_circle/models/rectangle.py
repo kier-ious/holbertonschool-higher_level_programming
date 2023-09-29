@@ -94,7 +94,7 @@ class Rectangle(Base):
 # __str__ ---------------------------------------------------------------------
     def __str__(self):
         """Printing the Rectangle with #"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format( \
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.__id, self.__y, self.__width, self.__height)
 
 # Update ----------------------------------------------------------------------
@@ -106,3 +106,5 @@ class Rectangle(Base):
         if kwargs:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+# Dictionary ------------------------------------------------------------------
