@@ -14,6 +14,7 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+# Width -----------------------------------------------------------------------
     @property
     def width(self):
         """Getter for width attribute"""
@@ -29,6 +30,7 @@ class Rectangle(Base):
         else:
             self.__width = value
 
+# Height ----------------------------------------------------------------------
     @property
     def height(self):
         """Getter for height attribute"""
@@ -43,6 +45,7 @@ class Rectangle(Base):
             raise ValueError("height must be >= 0")
         self.__height = value
 
+# X ---------------------------------------------------------------------------
     @property
     def x(self):
         """Getter for x attribute"""
@@ -57,6 +60,7 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
         self.__x = value
 
+# Y ---------------------------------------------------------------------------
     @property
     def y(self):
         """Getter for y attribute"""
@@ -71,18 +75,28 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
+# Area ------------------------------------------------------------------------
     def area(self):
         """Calculate are of the Rectangle"""
         return self.__width * self.__height
 
+# Display ---------------------------------------------------------------------
     def display(self):
         """Print Rectangle using the '#' character"""
-        for _ in range(self.__y):
+        for y in range(self.__y):
             print()
-        for _ in range(self.__height):
-            print(" " * self.__x + "#" * self.__width)
+        for i in range(self.__height):
+            for x in range(self.__x)
+                print(" ", end="")
+            for w in range(self.__width):
+                print("#", end="")
 
+# __str__ ---------------------------------------------------------------------
     def __str__(self):
         """Printing the Rectangle with #"""
-        return f"[Rectangle] ({self.id} {self.__x}/{self.__y}-\
-        {self.__width}/{self.__height})"
+        return [Rectangle] ({}) {}/{} - {}/{}.format(
+            self.__id, self.__y, self.__width, self.__height)
+
+# Update ----------------------------------------------------------------------
+    def update(self, *args, **kwargs):
+        arg_list = ["id", "eidth", "height", ]
