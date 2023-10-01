@@ -117,4 +117,13 @@ class Rectangle(Base):
             print(" " * self.x, end="")
             print("#" * self.width)
 
-# Dictionary ------------------------------------------------------------------
+# Instantiate for Dictionary repr----------------------------------------------
+    def to_dictionary(self):
+        """Public method that returns Dictionary repr"""
+        return {
+            'id' : self.id,
+            'width' : self.width,
+            'height' : self.height,
+            'x' : self.x,
+            'y' : self.y
+        }
