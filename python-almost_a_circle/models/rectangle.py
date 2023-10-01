@@ -95,7 +95,7 @@ class Rectangle(Base):
     def __str__(self):
         """Printing the Rectangle with #"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.__id, self.__y, self.__width, self.__height)
+            self.id, self.y, self.width, self.height)
 
 # Update ----------------------------------------------------------------------
     def update(self, *args, **kwargs):
