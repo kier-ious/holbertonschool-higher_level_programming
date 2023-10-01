@@ -111,7 +111,10 @@ class Rectangle(Base):
 # Display 0 -------------------------------------------------------------------
     def display(self):
         """Public method that prints out the rectangle in #'s"""
+        for i in range(self.y):
+            print()
         for i in range(self.height):
+            print(" " * self.x, end="")
             print("#" * self.width)
 
-# Dictionary ------------------------------------------------------------------
+# Dictionary -------------------------------------------------------------------
