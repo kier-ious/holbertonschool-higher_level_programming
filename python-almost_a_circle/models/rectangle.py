@@ -99,6 +99,7 @@ class Rectangle(Base):
 
 # Update ----------------------------------------------------------------------
     def update(self, *args, **kwargs):
+        """Update by adding validation"""
         ar_list = ["id", "width", "height", "x", "y"]
         if args:
             for i in range(len(args)):
