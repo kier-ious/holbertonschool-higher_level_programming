@@ -26,3 +26,19 @@ class Square(Rectangle):
         if kwargs:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+# Size -----------------------------------------------------------------------
+    @property
+    def size(self):
+        """Getter for size attribute"""
+        return self.height
+
+    @size.setter
+    def size(self, value):
+        """Setter for size in method"""
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        elif value <= 0:
+            raise ValueError("width must be > 0")
+        else:
+            self.__size = value
