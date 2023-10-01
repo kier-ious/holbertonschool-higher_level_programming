@@ -121,9 +121,9 @@ class Rectangle(Base):
     def to_dictionary(self):
         """Public method that returns Dictionary repr"""
         return {
-            'id' : self.id,
-            'width' : self.width,
-            'height' : self.height,
-            'x' : self.x,
-            'y' : self.y
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
         }
