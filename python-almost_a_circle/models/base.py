@@ -16,7 +16,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-#Static Method Dict to JSON string---------------------------------------------
+# Static Method Dict to JSON string--------------------------------------------
     @staticmethod
     def to_json_string(list_dictionaries):
         """Method that returns the JSON string repr"""
