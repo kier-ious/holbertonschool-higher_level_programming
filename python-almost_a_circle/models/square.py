@@ -49,3 +49,13 @@ class Square(Rectangle):
         if kwargs:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+# Instantiate for Dictionary repr----------------------------------------------
+    def to_dictionary(self):
+        """Public method that returns Dictionary repr"""
+        return {
+            'id': self.id,
+            'x': self.x,
+            'size': self.size,
+            'y': self.y
+        }
