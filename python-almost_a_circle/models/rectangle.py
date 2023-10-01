@@ -108,4 +108,10 @@ class Rectangle(Base):
             for key in kwargs:
                 setattr(self, key, kwargs[key])
 
+# Display 0 -------------------------------------------------------------------
+    def display(self):
+        """Public method that prints out the rectangle in #'s"""
+        for i in range(self.height):
+            print("#" * self.width)
+
 # Dictionary ------------------------------------------------------------------
