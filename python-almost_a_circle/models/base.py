@@ -47,3 +47,46 @@ class Base:
             return []
 
         return json.loads(json_string)
+
+# Class Method w/ dummy Rectangle and Square classes---------------------------
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attr already set"""
+        class_name = cls.__name__
+        if class_name == "Rectangle":
+            dummy = globals()["Rectangle"](1,0)
+        elif class_name == "Square":
+            dummy = globals()["Square"](1)
+
+        dummy.update(**dictionary)
+        return dummy
+
+    class Rectangle:
+        def __init__(self, width, height):
+            super().__init__()
+            self.width = width
+            self.height = height
+
+        def to_dictionary(self):
+            return {
+                'id': self.id,
+                'width': self.width,
+                'height': self.height
+            }
+
+        def update(self, **kwargs):
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+        def __str__(self):
+            return f"Rectangle({self.width}, {self.height})"
+
+    class Square(Rectangle):
+        def __init__(self, size):
+            super().__init__(size, size)
+
+        def to_dictionary(self):
+            return {
+                'id': self.id,
+                'size': self.width
+            }
