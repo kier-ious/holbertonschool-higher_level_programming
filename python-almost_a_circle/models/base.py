@@ -58,7 +58,7 @@ class Base:
             else:
                 new = cls(1)
             new.update(**dictionary)
-            return new
+            return new 
 
 # Class Method for File to instances ------------------------------------------
     @classmethod
