@@ -60,7 +60,8 @@ class Base:
             new.update(**dictionary)
             return new
 
-# File to instances -----------------------------------------------------------
+# Class Method for File to instances ------------------------------------------
+    @classmethod
     def load_from_file(cls):
         """Loading from JSON file named after class
 
