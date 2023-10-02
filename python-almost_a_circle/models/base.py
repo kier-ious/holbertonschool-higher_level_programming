@@ -54,7 +54,7 @@ class Base:
         """Returns an instance with all attr already set"""
         class_name = cls.__name__
         if class_name == "Rectangle":
-            dummy = globals()["Rectangle"](1,0)
+            dummy = globals()["Rectangle"](1, 0)
         elif class_name == "Square":
             dummy = globals()["Square"](1)
 
