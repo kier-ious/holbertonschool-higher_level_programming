@@ -61,16 +61,16 @@ class Base:
             return new
 
 # File to instances -----------------------------------------------------------
-def load_from_file(cls):
-    """Updating Base class that returns instances"""
-    filename = f"{cls.__name__}.json"
+    def load_from_file(cls):
+        """Updating Base class that returns instances"""
+        filename = f"{cls.__name__}.json"
 
-    try:
-        with open(filename, 'r') as jsonfile:
-            list_dicts = Base.from_json_string(jsonfile.read())
+        try:
+            with open(filename, 'r') as jsonfile:
+                list_dicts = Base.from_json_string(jsonfile.read())
 
-        isinstance = [cls.create(**d)for d in list_dicts]
-        return instances
+            instances = [cls.create(**d)for d in list_dicts]
+            return instances
 
-    except FileNotFoundError:
-        return []
+        except FileNotFoundError:
+            return []
