@@ -32,16 +32,15 @@ class TestBase_instantiation(unittest.TestCase):
     def from_json_string(json_string):
         # Test w/ an empty JSON string
         result = Base.from_json_string('')
-        self.assertEqual(result, [])
+        json_string.assertEqual(result, [])
 
         # Test w/ a JSON string
         json_string = '[{"key1": "value1", "key2": "value2"}]'
         result = Base.from_json_string(json_string)
-        self.assertEqual(result, [{'key1': 'value1', 'key2': 'value2'}])
-
+        json_string.assertEqual(result, [{'key1': 'value1', 'key2': 'value2'}])
 
     def test_create(self):
-        #test creating a Rectangle object
+        # Test creating a Rectangle object
         dictionary = {'width': 10, 'height': 20}
         result = Base.create(**dictionary)
 
@@ -62,5 +61,12 @@ class TestBase_instantiation(unittest.TestCase):
         result = Base.load_from_file()
         self.assertEqual(len(result), 2)
 
-if __name__ == "__main__":
-    unittest.main()
+    def test_create_with_invalid_arguments(self):
+        # Test creating a Base instance eith a negative ID
+        with self.assertRaisesRegex(TypeError):
+            obj = Base("invalid_argument")
+
+    def test_create_with_negative_id(self):
+        # Test creating a Base instance with a negative ID
+        with self.assertRaisesRegex(ValueError):
+            obj = Base(-1)
