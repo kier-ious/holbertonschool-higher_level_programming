@@ -36,13 +36,8 @@ class TestBase_instantiation(unittest.TestCase):
         b.id = 15
         self.assertEqual(15, b.id)
 
-    def test_id_private(self):
-        b = Base(10)
-        b.id = 15
-        with self.assertRaises(AttributeError):
-
     def test_str_id(self):
-        self.assertEqual("howdy", Base("howdy").id)
+        self.assertEqual("hello", Base("hello").id)
 
     def test_float_id(self):
         self.assertEqual(5.5, Base(5.5).id)
@@ -57,13 +52,13 @@ class test_create_instance(unittest.BaseCase):
     def test_create_rectangle_original(self):
         r1 = Rectangle(1, 3, 5, 7, 9)
         r1_dictionary = r1.to_dictionary()
-        r2 = Rectangle.create(**r1_dicitonary)
+        r2 = Rectangle.create(**r1_dictionary)
         self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r1))
 
     def test_create_rectangle_new(self):
         r1 = Rectangle(1, 3, 5, 7, 9)
         r1_dictionary = r1.to_dictionary()
-        r2 = Rectangle.create(**r1_dicitonary)
+        r2 = Rectangle.create(**r1_dictionary)
         self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r2))
 
     def test_create_rectangle_equals(self):
@@ -108,10 +103,10 @@ class TestBase_to_json_string(unittest.TestCase):
         with self.assertRaisesRegex(TypeError):
             Base.to_json_string([], 1)
 
-class from_json_string:
+class from_json_string(unittest.TestCase):
         # Test w/ an empty JSON string
         result = Base.from_json_string('')
-        json_string.assertEqual(result, [])
+        Base.assertEqual(result, [])
 
         # Test w/ a JSON string
         json_string = '[{"key1": "value1", "key2": "value2"}]'
@@ -133,15 +128,5 @@ class test_load_from_file(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8, 1)
         r2 = Rectangle(2, 4, 5, 6, 9)
         Rectangle.save_to_file([r1, r2])
-        list = Base.load_from_file()
-        self.assertEqual(len(result), 2)
-
-class test_create_with_invalid_arguments:
-        # Test creating a Base instance eith a negative ID
-        with self.assertRaisesRegex(TypeError):
-            obj = Base("invalid_argument")
-
-class test_create_with_negative_id:
-        # Test creating a Base instance with a negative ID
-        with self.assertRaisesRegex(ValueError):
-            obj = Base(-1)
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual(str(r1), str(list_rectangles_output[0]))
