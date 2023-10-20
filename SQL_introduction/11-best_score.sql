@@ -1,2 +1,2 @@
 -- Select the best.
-SELECT * score >= 10, name FROM second_table ORDER BY score, name DESC;
+SELECT score, name FROM second_table WHERE score >= 10 ORDER BY score DESC;
