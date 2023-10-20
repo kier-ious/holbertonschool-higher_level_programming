@@ -1,5 +1,5 @@
 -- First table.
-CREATE first_table IF NOT EXISTS first_table (
+CREATE TABLE IF NOT EXISTS first_table (
   id INT;
-  name VARCHAR(256)
+  NAME VARCHAR(256)
 );
