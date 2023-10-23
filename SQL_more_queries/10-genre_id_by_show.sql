@@ -6,4 +6,4 @@ WHERE tv_shows.id IN (
   SELECT DISTINCT show_id
   FROM tv_show_genres
 )
-ORDER BY tv_show.title, tv_show_genres.genre_id ASC;
+ORDER BY tv_show.title ASC, tv_show_genres.genre_id ASC;
