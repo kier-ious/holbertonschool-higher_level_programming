@@ -13,12 +13,15 @@ def list_states_starting_with_N(username, password, database_name):
         user=username,
         passwd=password,
         db=database_name,
-        host=host,
-        port=port
+        host='localhost',
+        port=3306
     )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id")
+    cursor.execute("""
+        SELECT * FROM states
+        WHERE name LIKE 'N%'ORDER BY states.id
+    """)
 
     results = cursor.fetchall()
 
