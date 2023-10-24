@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Displays arg and all values in states from db where name matches arg """
+""" Displays all values in states table that matches arg """
 
 
 import MySQLdb
@@ -19,7 +19,8 @@ def list_states_by_name(username, password, database_name, state_searched):
 
     cursor = db.cursor()
     cursor.execute("""SELECT * FROM states
-        WHERE name = '{}' ORDER BY states.id""".format(state_searched))
+        WHERE name LIKE BINARY '{}'
+        ORDER BY states.id""".format(state_searched))
 
     results = cursor.fetchall()
 
