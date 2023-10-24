@@ -6,7 +6,7 @@ import MySQLdb
 import sys
 
 
-def list_states_searched(username, password, database_name, state_searched):
+def search_states(username, password, database_name, state_name):
 
     """ Listing states in db """
     db = MySQLdb.connect(
@@ -19,7 +19,7 @@ def list_states_searched(username, password, database_name, state_searched):
 
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE name LIKE BINARY \
-        '{}' ORDER BY states.id".format(sys.argv[4]))
+        %s ORDER BY states.id", (state_name,))
 
     results = cursor.fetchall()
 
@@ -34,6 +34,5 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
-    host = 'localhost'
-    port = 3306
-    list_states_searched(username, password, database_name, host, port)
+    state_name = sys.argv[4]
+    search_states(username, password, database_name)
