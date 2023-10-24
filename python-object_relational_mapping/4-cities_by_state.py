@@ -7,7 +7,7 @@ import sys
 
 
 def list_cities(username, password, database_name):
-    """ Listing states in db """
+    """ Listing cities in db """
     db = MySQLdb.connect(
         user=username,
         passwd=password,
