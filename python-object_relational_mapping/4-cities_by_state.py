@@ -13,8 +13,8 @@ def list_cities(username, password, database_name):
         user=username,
         passwd=password,
         db=database_name,
-        host=host,
-        port=port
+        host='localhost',
+        port=3306
     )
 
     cursor = db.cursor()
