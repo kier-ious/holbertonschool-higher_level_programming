@@ -19,7 +19,7 @@ def search_states(username, password, database_name, state_name):
 
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE name LIKE BINARY \
-        %s ORDER BY states.id", (state_name,))
+        %s ORDER BY states.id", (state_searched))
 
     results = cursor.fetchall()
 
