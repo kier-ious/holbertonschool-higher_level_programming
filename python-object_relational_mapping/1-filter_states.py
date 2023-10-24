@@ -20,7 +20,7 @@ def list_states_starting_with_N(username, password, database_name):
     cursor = db.cursor()
     cursor.execute("""
         SELECT * FROM states
-        WHERE name LIKE 'N%'ORDER BY states.id
+        WHERE name LIKE BINARY 'N%' ORDER BY states.id
     """)
 
     results = cursor.fetchall()
