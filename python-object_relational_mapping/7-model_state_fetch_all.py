@@ -10,20 +10,23 @@ from sqlalchemy.orm import sessionmaker
 
 def list_states(username, password, database_name, host, port):
     """ Listing states in db """
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
-        sys.argv[1], sys.argv[2], sys.argv[3]))
+    engine = create_engine(
+        f"mysql://{username}:{password}@localhost:3306/{database_name}"
+    )
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for result in session.query(State):
-        print("{}: {}".format(result.id, result.name))
+    states = session.query(State).order_by(State.id)
+
+    for state in states:
+        print("f{state.id}: {state.name}")
+
+    session.close()
 
 
 if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
-    host = 'localhost'
-    port = 3306
     list_states(username, password, database_name)
