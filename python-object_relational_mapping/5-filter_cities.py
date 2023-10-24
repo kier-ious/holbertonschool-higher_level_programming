@@ -21,7 +21,7 @@ def list_cities(username, password, database_name, state_name):
         SELECT cities.name
         FROM cities LEFT JOIN states ON cities.state_id = states.id
         WHERE states.name LIKE BINARY '{}'
-        ORDER BY cities.id""".format(sys.argv[4]))
+        ORDER BY cities.id""", (state_name))
 
     results = cursor.fetchall()
 
