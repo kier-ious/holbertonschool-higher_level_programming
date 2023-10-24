@@ -7,34 +7,30 @@ import sys
 
 def list_states(username, password, database_name, host, port):
 	""" Listing states in db """
-	try:
-		db = MySQLdb.connect(
+	db = MySQLdb.connect(
 		user=username,
 		passwd=password,
 		db=database_name,
 		host=host,
 		port=port
-        )
+    )
 
-		with db.cursor() as cursor:
-			query = "SELECT * FROM states ORDER BY states.id"
-			cursor.execute(query)
+	cursor = db.cursor()
+	query = "SELECT * FROM states ORDER BY states.id"
+	cursor.execute(query)
 
-		results = cursor.fetchall()
+	results = cursor.fetchall()
 
-		for state in results:
-			print(state)
+	for state in results:
+		print(state)
 
-	except MySQLdb.Error as e:
-		print("Error: ", e)
-	finally:
-		cursor.close()
-		db.close()
+	cursor.close()
+	db.close()
 
 if __name__ == "__main__":
-	username=sys.argv[1],
-	password=sys.argv[2],
-	database_name=sys.argv[3],
-	host = "localhost",
+	username = sys.argv[1]
+	password = sys.argv[2]
+	database_name = sys.argv[3]
+	host = "localhost"
 	port = 3306
 	list_states(username, password, database_name, host, port)
