@@ -18,7 +18,7 @@ def list_states_searched(username, password, database_name, state_searched):
     )
 
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE \
+    cursor.execute("SELECT * FROM states WHERE name LIKE BINARY \
         '{}' ORDER BY states.id".format(sys.argv[4]))
 
     results = cursor.fetchall()
