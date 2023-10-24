@@ -6,7 +6,7 @@ import MySQLdb
 import sys
 
 
-def search_states(username, password, database_name, state_name):
+def list_search_states(username, password, database_name, state_name):
 
     """ Listing states in db """
     db = MySQLdb.connect(
@@ -36,4 +36,4 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database_name = sys.argv[3]
     state_searched = sys.argv[4]
-    search_states(username, password, database_name)
+    list_search_states(username, password, database_name, state_searched)
