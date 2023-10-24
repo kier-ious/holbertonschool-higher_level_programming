@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Lists all states from db hbtn_0e_0_usa """
+""" Lists all cities from db hbtn_0e_0_usa """
 
 
 import MySQLdb
@@ -7,13 +7,12 @@ import sys
 
 
 def list_cities(username, password, database_name):
-
     """ Listing states in db """
     db = MySQLdb.connect(
         user=username,
         passwd=password,
         db=database_name,
-        host='localhost',
+        host="localhost",
         port=3306
     )
 
