@@ -21,11 +21,13 @@ def list_cities(username, password, database_name, state_name):
         SELECT cities.name
         FROM cities LEFT JOIN states ON cities.state_id = states.id
         WHERE states.name LIKE BINARY '{}'
-        ORDER BY cities.id""", (state_name))
+        ORDER BY cities.id""".format(state_name))
 
     results = cursor.fetchall()
 
-    print(", ".join([result[2] for result in results]))
+    cities = [city[0] for city in results]
+    cities_str = ", ".join(cities)
+    print(cities_str)
 
     cursor.close()
     db.close()
