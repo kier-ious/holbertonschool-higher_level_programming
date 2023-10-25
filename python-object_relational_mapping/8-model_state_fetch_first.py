@@ -18,7 +18,7 @@ def first_state(username, password, database_name):
 
     session = Session()
 
-    states = session.query(State).order_by(State.id).first()
+    first_state = session.query(State).order_by(State.id).first()
 
     if first_state is not None:
         print(f"{first_state.id}: {first_state.name}")
