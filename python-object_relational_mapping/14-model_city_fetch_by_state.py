@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Deletes all states from db hbtn_0e_0_usa w/ an 'a' """
+""" Deletes all cities and states from db hbtn_0e_0_usa w/ an 'a' """
 
 
 import sys
@@ -13,7 +13,6 @@ def cities_states(username, password, database_name):
     """ Listing states in db """
     engine = create_engine(
         f'mysql://{username}:{password}@localhost:3306/{database_name}'
-        echo=True
     )
 
     Session = sessionmaker(bind=engine)
