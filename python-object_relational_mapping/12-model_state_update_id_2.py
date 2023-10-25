@@ -30,6 +30,4 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
-    state_id = int(sys.argv[4])
-    new_name = sys.argv[5]
     list_states(username, password, database_name)
