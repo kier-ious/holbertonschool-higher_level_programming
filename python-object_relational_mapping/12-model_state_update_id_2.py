@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-def list_states(username, password, database_name, state_id, new_name):
+def list_states(username, password, database_name):
     """ Listing states in db """
     engine = create_engine(
         f'mysql://{username}:{password}@localhost:3306/{database_name}'
@@ -17,14 +17,11 @@ def list_states(username, password, database_name, state_id, new_name):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session. quey(State).filter(State.id == state_id).first()
+    update_state = session.query(State).filter_by(state_id).first()
 
-    if state:
-        state.name = new_name
+    if update_state:
+        update_state.name = "New Mexico"
         session.commit()
-        print(state.id)
-    else:
-        print("Not found")
 
     session.close()
 
@@ -35,4 +32,4 @@ if __name__ == "__main__":
     database_name = sys.argv[3]
     state_id = int(sys.argv[4])
     new_name = sys.argv[5]
-    list_states(username, password, database_name, state_id, new_name)
+    list_states(username, password, database_name)
