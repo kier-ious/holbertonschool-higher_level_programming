@@ -8,7 +8,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-def list_states(username, password, database_name, state_name):
+def list_states(username, password, database_name):
     """ Listing states in db """
     engine = create_engine(
         f'mysql://{username}:{password}@localhost:3306/{database_name}'
