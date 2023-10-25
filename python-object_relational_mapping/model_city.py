@@ -9,7 +9,7 @@ from sqlalchemy.orm import relationship
 Base = declarative_base()
 
 
-class City(State):
+class City(Base):
     """ Base class: State"""
     __tablename__ = "cities"
     id = Column(Integer, primary_key=True, nullable=False)
