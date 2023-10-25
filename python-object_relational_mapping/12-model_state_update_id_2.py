@@ -17,7 +17,7 @@ def list_states(username, password, database_name):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    update_state = session.query(State).filter_by(State.id == 2).first()
+    update_state = session.query(State).filter_by(id=2).first()
 
     if update_state:
         update_state.name = "New Mexico"
