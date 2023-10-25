@@ -6,7 +6,7 @@ import sys
 from model_state import Base, City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from model_city import Base, City
 
 
 def cities_states(username, password, database_name):
