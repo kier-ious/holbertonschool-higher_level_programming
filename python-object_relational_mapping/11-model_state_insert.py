@@ -17,12 +17,11 @@ def list_states(username, password, database_name, state_name):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).filter(State.name == state_name).first()
+    new_state = State(name="Louisiana")
+    session.add(new_state)
+    session.commit()
 
-    if state is not None:
-        print(state.id)
-    else:
-        print("Not found")
+    print(new_state.id)
 
     session.close()
 
@@ -31,5 +30,4 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
-    state_name = sys.argv[4]
-    list_states(username, password, database_name, state_name)
+    list_states(username, password, database_name)
