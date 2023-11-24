@@ -5,15 +5,15 @@ function factorial (n) {
   if (isNaN(n) || n < 0) {
     return 1;
   }
-  // recusive case, n! = n* (n-1)!
+  // recursive case, n! = n* (n-1)!
   return n * factorial(n - 1);
 }
 
 const args = process.argv.slice(2);
-const input = parseInt(args[0], 10);
+const input = parseInt(args[0]);
 
-if (isNaN(input)) {
-  console.log('NaN');
-} else {
+if (!isNaN(input)) {
   console.log(factorial(input));
+} else {
+  console.log('Infinity');
 }
