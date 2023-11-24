@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function factorial(n) {
+function factorial (n) {
   // base case, factorial of 0 is 1
   if (isNaN(n) || n < 0) {
     return 1;
