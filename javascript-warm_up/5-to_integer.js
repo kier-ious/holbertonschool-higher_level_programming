@@ -6,5 +6,5 @@ const convertedNumber = +firstArgument;
 if (Number.isFinite(convertedNumber) && Number.isInteger(convertedNumber)) {
   console.log('My number: ${convertedNumber}');
 } else {
-  console.log("Not a number");
+  console.log('Not a number');
 }
