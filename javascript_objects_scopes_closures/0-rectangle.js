@@ -2,4 +2,4 @@
 class Rectangle {
   // Construtor
 }
-module.exports = Rectangle
+module.exports = Rectangle;
