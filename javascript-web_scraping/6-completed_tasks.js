@@ -1,9 +1,9 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 const request = require('request');
-const aprUrl = 'https://jsonplaceholder.typicode.com/todos';
+const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
 // makes request to the API Url
-request(aprUrl, (error, response, body) => {
+request(apiUrl, (error, response, body) => {
   if (error) {
     console.error('Error:', error);
     process.exit(1);
@@ -22,7 +22,5 @@ request(aprUrl, (error, response, body) => {
     }
   });
   // print dem results!
-  Object.keys(completedTasksByUser).forEach((userId) => {
-    console.log(`'${userId}': ${completedTasksByUser[userId]},`);
-  });
+  console.log(completedTasksByUser);
 });
