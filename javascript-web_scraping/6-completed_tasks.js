@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 const request = require('request');
 const aprUrl = 'https://jsonplaceholder.typicode.com/todos';
 
@@ -25,6 +25,6 @@ request(aprUrl, (error, response, body) => {
   });
   // print dem results!
   completedTasksByUser.forEach((count, userId) => {
-    console.log(`'${userId}': ${count},`);
+    console.log(completedTasksByUser);
   });
 });
