@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 const request = require('request');
 const moveId = process.argv[2];
 if (!moveId) {
