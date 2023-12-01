@@ -1,6 +1,7 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 const request = require('request');
 const fs = require('fs');
+
 const url = process.argv[2];
 const filePath = process.argv[3];
 
@@ -8,6 +9,7 @@ if (!url || !filePath) {
   console.error('Usage: ./script.js <URL> <FILE-PATH>');
   process.exit(1);
 }
+
 // makes a request to the choosen url
 request(url, (error, response, body) => {
   if (error) {
@@ -20,6 +22,7 @@ request(url, (error, response, body) => {
       console.error('Error writing to file:', err);
       process.exit(1);
     }
+
     console.log(`Contents of ${url} saved to ${filePath}`);
   });
 });
