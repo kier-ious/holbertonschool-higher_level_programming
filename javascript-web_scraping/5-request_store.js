@@ -23,6 +23,6 @@ request(url, (error, response, body) => {
       process.exit(1);
     }
 
-    console.log('C is fun!');
+    console.log();
   });
 });
