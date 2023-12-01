@@ -2,7 +2,7 @@
 const request = require('request');
 const url = process.argv[2];
 if (!url) {
-  console.error(err);
+  console.error('Error');
   process.exit(1);
 }
 request.get(url, (error, response) => {
