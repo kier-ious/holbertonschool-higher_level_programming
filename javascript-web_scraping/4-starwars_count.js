@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 const request = require('request');
 const apiUrl = process.argv[2];
 if (!apiUrl) {
@@ -14,7 +14,6 @@ request(apiUrl, (error, response, body) => {
   }
   // parse the JSON response
   const data = JSON.parse(body);
-
   // filter movies where Wedge Salad is present
   const moviesWithWedge = data.results.filter(movie =>
     movie.characters.includes(
