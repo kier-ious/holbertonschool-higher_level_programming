@@ -12,7 +12,7 @@ request(aprUrl, (error, response, body) => {
   const todos = JSON.parse(body);
 
   // create a map to store # of completed tasks per user
-  const completedTasksByUser = { todos };
+  const completedTasksByUser = {};
 
   // iterate through tasks
   todos.forEach((task) => {
@@ -22,5 +22,7 @@ request(aprUrl, (error, response, body) => {
     }
   });
   // print dem results!
-  console.log(JSON.stringify(completedTasksByUser, null, 2));
+  Object.keys(completedTasksByUser).forEach((userId) => {{
+    console.log(`${userId}: ${completedTasksByUser[userId]}`);
+  }});
 });
