@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 const request = require('request');
 const aprUrl = 'https://jsonplaceholder.typicode.com/todos';
 
@@ -12,19 +12,15 @@ request(aprUrl, (error, response, body) => {
   const todos = JSON.parse(body);
 
   // create a map to store # of completed tasks per user
-  const completedTasksByUser = new Map();
+  const completedTasksByUser = {};
 
   // iterate through tasks
   todos.forEach((task) => {
     if (task.completed) {
-      completedTasksByUser.set(
-        task.userId,
-        (completedTasksByUser.get(task.userId) || 0) + 1
-      );
+      completedTasksByUser[task.userId] = (
+        completedTasksByUser[task.userId] || 0) + 1;
     }
   });
   // print dem results!
-  completedTasksByUser.forEach((count, userId) => {
-    console.log(completedTasksByUser);
-  });
+  console.log(JSON.stringify(completedTasksByUser, null, 2));
 });
