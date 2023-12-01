@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 const request = require('request');
 const aprUrl = 'https://jsonplaceholder.typicode.com/todos';
 
@@ -22,7 +22,7 @@ request(aprUrl, (error, response, body) => {
     }
   });
   // print dem results!
-  Object.keys(completedTasksByUser).forEach((userId) => {{
-    console.log(`${userId}: ${completedTasksByUser[userId]}`);
-  }});
+  Object.keys(completedTasksByUser).forEach((userId) => {
+    console.log(`'${userId}': ${completedTasksByUser[userId]},`);
+  });
 });
