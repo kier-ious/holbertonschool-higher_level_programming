@@ -12,7 +12,7 @@ request(aprUrl, (error, response, body) => {
   const todos = JSON.parse(body);
 
   // create a map to store # of completed tasks per user
-  const completedTasksByUser = {};
+  const completedTasksByUser = {completedTasksByUser};
 
   // iterate through tasks
   todos.forEach((task) => {
