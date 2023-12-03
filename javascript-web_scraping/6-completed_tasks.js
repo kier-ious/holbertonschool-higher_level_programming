@@ -2,9 +2,8 @@
 const request = require('request');
 const apiUrl = process.argv[2];
 
-
-  // create a map to store # of completed tasks per user
-  const completedTasksByUser = {};
+// create a map to store # of completed tasks per user
+const completedTasksByUser = {};
 // makes request to the API Url
 request(apiUrl, (error, response, body) => {
   if (error) {
