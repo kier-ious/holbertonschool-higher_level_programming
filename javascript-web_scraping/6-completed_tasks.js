@@ -1,7 +1,10 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 const request = require('request');
-const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
+const apiUrl = process.argv[2];
 
+
+  // create a map to store # of completed tasks per user
+  const completedTasksByUser = {};
 // makes request to the API Url
 request(apiUrl, (error, response, body) => {
   if (error) {
@@ -10,9 +13,6 @@ request(apiUrl, (error, response, body) => {
   }
   // parsin' the response to the body
   const todos = JSON.parse(body);
-
-  // create a map to store # of completed tasks per user
-  const completedTasksByUser = {};
 
   // iterate through tasks
   todos.forEach((task) => {
