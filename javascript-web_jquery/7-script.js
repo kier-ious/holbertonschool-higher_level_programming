@@ -6,7 +6,7 @@ $(function () {
     success: function (data) {
       $('#character').text(data.name);
     },
-    error: function(error) {
+    error: function (error) {
       console.error('Error', error);
     }
   });
